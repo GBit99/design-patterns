@@ -1,5 +1,8 @@
 package state;
 
-public interface IState {
+import models.Client;
+import models.PackageType;
 
+public interface IState {
+	public boolean canHandleClient(Client client, PackageType packageType);
 }

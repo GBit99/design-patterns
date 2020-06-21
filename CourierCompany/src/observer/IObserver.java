@@ -1,5 +1,7 @@
 package observer;
 
+import chain.CounterEmployee;
+
 public interface IObserver {
-	public void update();
+	public void update(CounterEmployee employee);
 }
