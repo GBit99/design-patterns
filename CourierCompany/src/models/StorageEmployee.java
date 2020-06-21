@@ -10,6 +10,6 @@ public class StorageEmployee implements IObserver {
 	public void update(CounterEmployee employee) {
 		if(employee.getState().getClass().getName() == PreparingPackageState.class.getName()) {
 			employee.givePackageToStorageBoy();
-		}	
+		}
 	}
 }

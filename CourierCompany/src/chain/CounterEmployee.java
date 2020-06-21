@@ -15,6 +15,12 @@ public abstract class CounterEmployee implements IObservable {
 	private IState state;
 	private CounterEmployee successor;
 	
+	public CounterEmployee(CounterEmployee successor, IState state) {
+		this.successor = successor;
+		this.observers = new ArrayList<IObserver>();
+		this.state = state;
+	}
+	
 	public CounterEmployee(CounterEmployee successor) {
 		this.successor = successor;
 		this.observers = new ArrayList<IObserver>();
@@ -72,6 +78,8 @@ public abstract class CounterEmployee implements IObservable {
 	}
 	
 	public void givePackageToStorageBoy() {
-		System.out.println("Employee gives the package");
+		System.out.println("Counter employee gave a package to the storage boy.");
+		
+		this.setState(new WaitingClientState());
 	}
 }
